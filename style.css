@@ -1,0 +1,38 @@
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .menu {
+    background: #e0e0e0;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+.menu h2,h2,h3{
+    text-align: center;
+    color: blue;
+}
+
+form {
+    background: #f4f4f4;
+    padding: 15px;
+    width: 300px;
+    border-radius: 8px;
+    margin: 30px auto; /* 👈 centraliza horizontalmente */
+}
+
+input {
+    width: 100%;
+    padding: 5px;
+}
+
+button {
+    background: orange;
+    color: white;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+}
