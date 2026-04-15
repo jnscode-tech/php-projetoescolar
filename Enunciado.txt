@@ -1,49 +1,43 @@
-Desenvolver um sistema de Gerenciamento de Alunos em PHP
-Data de conclusão 16 de abril de 2026 às 23:59
-
-Instruções
-
-Desenvolva um sistema em PHP para gerenciar os alunos de uma turma. O programa deve armazenar os dados em arrays, sem utilizar banco de dados. Cada aluno deverá possuir matrícula, nome, nota 1, nota 2 e quantidade de faltas. O sistema deverá permitir cadastrar, listar, buscar, alterar e excluir alunos. Também deverá calcular a média de cada aluno, informar sua situação final, mostrar a média geral da turma, identificar o aluno com maior média, o aluno com menor média, listar aprovados, listar reprovados e informar o total de alunos cadastrados. O programa deve ser organizado com funções e utilizar estruturas de decisão, repetição, variáveis, operadores e arrays. 
-
-
-Regras do sistema 
-
-Cada aluno deve possuir, no mínimo, os seguintes dados: 
-
-Matrícula. 
-Nome. 
-Nota 1. 
-Nota 2. 
-Número de faltas. 
-Esses dados devem ser armazenados em array, podendo ser usado: 
-
-Um array multidimensional; ou 
-Arrays separados, desde que o aluno mantenha correspondência entre os índices.
+<?php
+session_start();
+if (!isset($_SESSION['alunos'])) {
+    $_SESSION['alunos'] = [];
+}
+include("funcoes.php");
  
-O sistema deve ter 
-
-O sistema deve implementar obrigatoriamente as seguintes funcionalidades: 
-
-Cadastrar aluno. 
-Listar todos os alunos. 
-Buscar aluno pela matrícula. 
-Alterar dados de um aluno. 
-Excluir aluno. 
-Calcular média individual. 
-Informar situação do aluno. 
-Mostrar média geral da turma. 
-Mostrar aluno com maior média. 
-Mostrar aluno com menor média. 
-Listar apenas alunos aprovados. 
-Listar apenas alunos reprovados. 
-Exibir quantidade total de alunos cadastrados.
+$msg = '';
+$msgTipo = '';
  
+if (isset($_POST['cadastrar'])) {
+    $matricula = trim($_POST['matricula']);
+    $nome      = trim($_POST['nome']);
+    $nota1     = $_POST['nota1'];
+    $nota2     = $_POST['nota2'];
+    $faltas    = $_POST['faltas'];
  
+    if (empty($matricula) || empty($nome)) {
+        $msg = 'Matrícula e nome são obrigatórios.';
+        $msgTipo = 'erro';
+    } elseif (!validarNota($nota1) || !validarNota($nota2)) {
+        $msg = 'Notas devem estar entre 0 e 10.';
+        $msgTipo = 'erro';
+    } elseif (!validarFaltas($faltas)) {
+        $msg = 'Número de faltas inválido (máx: ' . TOTAL_AULAS . ').';
+        $msgTipo = 'erro';
+    } elseif (buscarPorMatricula($_SESSION['alunos'], $matricula)) {
+        $msg = 'Matrícula já cadastrada!';
+        $msgTipo = 'erro';
+    } else {
+        $_SESSION['alunos'][] = [
+            'matricula' => $matricula,
+            'nome'      => $nome,
+            'nota1'     => floatval($nota1),
+            'nota2'     => floatval($nota2),
+            'faltas'    => intval($faltas),
+        ];
+        $msg = 'Aluno cadastrado com sucesso!';
+        $msgTipo = 'sucesso';
+    }
+}
+?>
 
-Regras de negócio 
-
-O sistema deve obedecer às seguintes regras: 
-A média do aluno deve ser calculada com base em duas notas. 
-Um aluno será aprovado se tiver média maior ou igual a 7,0 e ter presença de no mínimo de 75% 
-Um aluno será reprovado se tiver menção abaixo de 7 e presença abaixo de 75% 
-Aprovado deverá ter menção de 75% no mínimo e frequência acima de 75%. 

@@ -1,6 +1,7 @@
 <div class="menu">
-<a href="index.php">Início</a>
-<a href="cadastrar.php">Cadastrar</a>
-<a href="excluir.php">Excluir</a>
+    <a href="index.php">Início</a>
+    <a href="cadastrar.php">Cadastrar</a>
+    <a href="listar.php">Listar</a>
+    <a href="buscar.php">Buscar</a>
+    <a href="relatorio.php">Relatório</a>
 </div>
-<h2>📚 Sistema Escolar - JujuSantista</h2>
