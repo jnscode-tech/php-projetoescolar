@@ -5,10 +5,14 @@
   box-sizing: border-box;
   font-family: Arial, sans-serif;
 }
-
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 /* MENU PHP*/
 .menu {
-  background: #ffffff;
+  background: #F5F5F5;
   padding: 15px;
   display: flex;
   justify-content: center;
@@ -22,24 +26,32 @@
   color: #333;
   transition: 0.3s;
 }
-
 .menu a:hover {
   color: purple;
+}
+/* FOOTER PHP */
+footer {
+  margin-top: auto;
+  background: #F5F5F5;
+  text-align: center;
+  padding: 10px;
+  border-top: 1px solid #ccc;
 }
 
 /* BANNER NO INDEX*/
 .banner {
-  position: relative;
+  /* position: relative;
   height: 90vh;
+  overflow: hidden; */
+  position: relative;
+  height: calc(100vh - 100px);
   overflow: hidden;
 }
-
 .banner img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-
 /* CAMADA ESCURA */
 .overlay {
   position: absolute;
@@ -49,7 +61,6 @@
   height: 100%;
   background: rgba(0, 0, 0, 0.4);
 }
-
 /* TEXTO CENTRAL */
 .conteudo {
   position: absolute;
@@ -59,7 +70,6 @@
   text-align: center;
   color: #fff;
 }
-
 .conteudo h1 {
   font-size: 48px;
   margin-bottom: 10px;
@@ -69,17 +79,24 @@
   font-size: 20px;
 }
 /* CADASTRAR PHP */
-
 .content {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: calc(100vh - 52px);
-  padding: 40px 24px;
-  background: #f5f5f5;
+  min-height: calc(100vh - 40px);
+  padding: 30px 20px;
+  background: #f5f5f5; */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* antes era center */
+  align-items: center;
+  min-height: calc(100vh - 40px);
+  padding: 25px 29px; /* diminui o espaço superior */
 }
 .content h1 {
+  margin-top: 0;
+  margin-bottom: 15px;
   font-size: 28px;
   text-align: center;
   margin-bottom: 24px;
@@ -87,15 +104,15 @@
 }
 form {
   background: #fff;
-  padding: 40px;
+  padding: 30px;
   width: 100%;
-  height: 600px;
-  max-width: 900px;
+  height: 650px;
+  max-width: 700px;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 10px;
   margin: 0;
 }
 .campo {
@@ -109,10 +126,10 @@ form {
 label,
 input,
 button {
-  font-size: 20px;
+  font-size: 19px;
 }
 input {
-  padding: 12px;
+  padding: 10px;
   margin-bottom: 10px;
   font-size: 16px;
 }
@@ -121,7 +138,7 @@ button {
   background: #3710d6;
   color: white;
   border: none;
-  padding: 12px;
+  padding: 10px;
   width: 100%;
   border-radius: 5px;
   font-size: 20px;
@@ -129,18 +146,67 @@ button {
   font: bold;
 }
 .mensagem {
-    padding: 10px;
-    margin-bottom: 15px;
-    border-radius: 5px;
-    font-weight: bold;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  font-weight: bold;
 }
 
 .sucesso {
-    background-color: #d4edda;
-    color: #155724;
+  background-color: #d4edda;
+  color: #155724;
 }
 
 .erro {
-    background-color: #f8d7da;
-    color: #721c24;
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* LISTAR PHP */
+.container-tabela {
+  display: flex;
+  justify-content: center; /* centraliza horizontal */
+  margin-top: 40px;
+}
+.h1_listar{
+  margin-top: 20px;
+  margin-bottom: 15px;
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 24px;
+  color: #3710d6;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 1000px;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+th {
+  background-color: #4a90e2;
+  color: white;
+  padding: 12px;
+  text-align: center;
+}
+
+td {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+/* efeito hover nas linhas */
+tr:hover {
+  background-color: #f5f5f5;
+}
+.resumo-tabela {
+  width: 80%;
+  margin: 15px auto;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
 }

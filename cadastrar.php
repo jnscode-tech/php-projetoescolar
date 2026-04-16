@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 // Inicializa o array corretamente
 if (!isset($_SESSION['alunos'])) {
     $_SESSION['alunos'] = [];
@@ -8,7 +7,7 @@ if (!isset($_SESSION['alunos'])) {
 $msg = '';
 $msgTipo = '';
 
-// Cadastro de aluno
+// Pega todos os dados para o Cadastro de aluno
 if (isset($_POST['cadastrar'])) {
 
     $matricula = trim($_POST['matricula']);
@@ -64,12 +63,10 @@ if (isset($_POST['cadastrar'])) {
 <body>
 
     <?php include("menu.php"); ?>
-
+   
     <div class="content">
 
         <h1>Cadastrar Alunos</h1>
-
-
 
         <form method="post" class="formularioAluno">
 
@@ -103,9 +100,11 @@ if (isset($_POST['cadastrar'])) {
                 <?php echo $msg; ?>
             </div>
         <?php endif; ?>
+
+
+   
     </div>
-
-
+ <?php include("footer.php"); ?>
 
 </body>
 
