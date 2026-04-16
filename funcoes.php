@@ -4,10 +4,10 @@ function calcularMedia($n1, $n2){
 }
 
 function calcularFrequencia($faltas){
-    $total = 100;
+    $total = 250;
     return (($total - $faltas)/$total)*100;
 }
 
 function situacao($media, $freq){
-    return ($media >= 7 && $freq >= 75) ? "Aprovado" : "Reprovado";
+    return ($media >= 7 && $freq >= 75) ? "APROVADO" : "REPROVADO";
 }

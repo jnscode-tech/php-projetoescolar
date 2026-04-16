@@ -56,17 +56,19 @@ if (isset($_POST['cadastrar'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastrar Aluno</title>
+    <title>Cadastrar</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <?php include("menu.php"); ?>
+
+     <h1 class="h1_cadastrar">Cadastrar Alunos</h1>
    
     <div class="content">
 
-        <h1>Cadastrar Alunos</h1>
+       
 
         <form method="post" class="formularioAluno">
 
@@ -80,15 +82,15 @@ if (isset($_POST['cadastrar'])) {
                 <input type="text" name="nome" maxlength="50" required>
             </div>
             <div class="campo">
-                <label>Nota 1:</label>
+                <label>Digite a 1ª Nota:</label>
                 <input type="number" step="0.1" name="nota1" required>
             </div>
             <div class="campo">
-                <label>Nota 2:</label>
+                <label>Digite a 2ª Nota:</label>
                 <input type="number" step="0.1" name="nota2" required>
             </div>
             <div class="campo completo">
-                <label>Qtd de Faltas:</label>
+                <label>Digite a qtd de aulas do bimestre:</label>
                 <input type="number" name="faltas" required>
             </div>
             <button type="submit" name="cadastrar" class="completo">Cadastrar</button>

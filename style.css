@@ -12,7 +12,7 @@ body {
 }
 /* MENU PHP*/
 .menu {
-  background: #F5F5F5;
+  background: #f5f5f5;
   padding: 15px;
   display: flex;
   justify-content: center;
@@ -23,7 +23,7 @@ body {
 .menu a {
   text-decoration: none;
   font-size: 28px;
-  color: #333;
+  color:#546A51;
   transition: 0.3s;
 }
 .menu a:hover {
@@ -32,7 +32,7 @@ body {
 /* FOOTER PHP */
 footer {
   margin-top: auto;
-  background: #F5F5F5;
+  background: #f5f5f5;
   text-align: center;
   padding: 10px;
   border-top: 1px solid #ccc;
@@ -80,13 +80,6 @@ footer {
 }
 /* CADASTRAR PHP */
 .content {
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: calc(100vh - 40px);
-  padding: 30px 20px;
-  background: #f5f5f5; */
   display: flex;
   flex-direction: column;
   justify-content: flex-start; /* antes era center */
@@ -94,13 +87,13 @@ footer {
   min-height: calc(100vh - 40px);
   padding: 25px 29px; /* diminui o espaço superior */
 }
-.content h1 {
-  margin-top: 0;
+.h1_cadastrar {
+  margin-top: 30px;
   margin-bottom: 15px;
   font-size: 28px;
   text-align: center;
   margin-bottom: 24px;
-  color: #3710d6;
+  color: #546A51;
 }
 form {
   background: #fff;
@@ -135,7 +128,7 @@ input {
 }
 button {
   grid-column: 1 / -1; /* <- isso força ocupar as 2 colunas */
-  background: #3710d6;
+  background:#546A51;
   color: white;
   border: none;
   padding: 10px;
@@ -144,6 +137,7 @@ button {
   font-size: 20px;
   cursor: pointer;
   font: bold;
+  border-radius: 12px;
 }
 .mensagem {
   padding: 10px;
@@ -168,13 +162,13 @@ button {
   justify-content: center; /* centraliza horizontal */
   margin-top: 40px;
 }
-.h1_listar{
+.h1_listar {
   margin-top: 20px;
   margin-bottom: 15px;
   font-size: 28px;
   text-align: center;
   margin-bottom: 24px;
-  color: #3710d6;
+  color: #546A51;
 }
 
 table {
@@ -188,7 +182,8 @@ table {
   font-family: Arial, sans-serif;
 }
 th {
-  background-color: #4a90e2;
+  /* background-color: #4a90e2; */
+  background: #546A51;
   color: white;
   padding: 12px;
   text-align: center;
@@ -204,9 +199,169 @@ tr:hover {
   background-color: #f5f5f5;
 }
 .resumo-tabela {
+  color: #364434;
   width: 80%;
   margin: 15px auto;
   text-align: center;
   font-size: 22px;
   font-weight: bold;
+}
+.aprovado {
+  color: blue;
+  font-weight: bold;
+}
+.reprovado {
+  color: red;
+  font-weight: bold;
+}
+/* BUSCAR PHP */
+.container-busca {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* não força altura */
+    margin-top: 40px;
+}
+
+.form-busca {
+    width: 80%;
+    max-width: 550px;
+    background: #f5f5f5;
+    padding: 25px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    height: auto;
+}
+
+.form-busca h2,
+.form-busca label {
+    text-align: center;
+    color: #546A51;
+}
+
+.form-busca input {
+    padding: 10px;
+    width: 100%;
+}
+
+.form-busca button {
+    padding: 12px;
+    background:#546A51;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.resultado {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 380px;
+    background: #eaeaea;
+    padding: 15px;
+    border-radius: 10px;
+}
+.h1_buscar{
+    margin-top: 20px;
+  margin-bottom: 15px;
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 24px;
+  color:#546A51;
+}
+
+/* ALTERAR PHP */
+
+.btn-excluir {
+    margin-left: 8px;
+}
+.btn-excluir {
+    margin-left: 8px;
+    color: red;
+}
+
+/* EDITAR PHP */
+.btn-voltar {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 12px;
+    background: red;
+    text-decoration: none;
+    font-size: bold;
+    border-radius: 8px;
+    color: white;
+    text-align: center;
+}
+/* RELATÓRIO PHP */
+.container-relatorio {
+    width: 90%;
+    margin: auto;
+    text-align: center;
+}
+
+/* TÍTULO */
+.h2_relatorio{
+    margin-top: 20px;
+    color: #333;
+}
+
+/* CARDS */
+.cards-relatorio {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    width: 30%;
+    min-width: 200px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* LISTAS */
+.listas {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.box {
+    width: 40%;
+    min-width: 250px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* STATUS */
+.rel-aprovado {
+    color: green;
+    margin-bottom: 10px;
+}
+
+.rel-reprovado {
+    color: red;
+    margin-bottom: 10px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .cards, .listas {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card, .box {
+        width: 90%;
+    }
 }
