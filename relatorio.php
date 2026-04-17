@@ -8,7 +8,7 @@ $alunos = $_SESSION['alunos'] ?? [];
 $total = count($alunos);
 $soma = 0;
 
-$diasLetivos = 200;
+$diasLetivos = 250;
 
 $aprovados = [];
 $reprovados = [];
