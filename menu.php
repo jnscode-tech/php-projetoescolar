@@ -4,6 +4,5 @@
     <a href="buscar.php">Buscar</a>
     <a href="listar.php">Listar</a>
     <a href="alterar.php">Alterar</a>
-    <a href="buscar.php">Buscar</a>
     <a href="relatorio.php">Relatório</a>
 </div>
