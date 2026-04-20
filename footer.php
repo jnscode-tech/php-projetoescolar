@@ -1,3 +1,3 @@
 <footer>
-    Realizado por Juliana N. Santos - Curso BeckEnd - Senac - 2026
+    © 2026 • Juliana Nascimento dos Santos • Projeto Back-End • Senac
 </footer>
